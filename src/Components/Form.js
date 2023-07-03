@@ -9,6 +9,7 @@ function TipCalculator() {
   const [totalAmount, setTotalAmount] = useState("");
   const [percentageOfTip, setPercentageOfTip] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ function TipCalculator() {
         <Form.Group className="hi">
           <Form.Label>Total Bill Amount</Form.Label>
           <Form.Control
+            defaultValue="$"
             type="integer"
             className="input_fields"
             name="totalAmount"
@@ -42,15 +44,13 @@ function TipCalculator() {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          {" "}
-          Submit{" "}
+          Submit
         </Button>
       </Form>
 
       {submitted && (
         <div>
           <p className="col-lg-6">
-            {" "}
             Amount of tip needed: ${totalAmount * (percentageOfTip / 100)}
           </p>
         </div>
