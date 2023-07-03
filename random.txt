@@ -1,0 +1,12 @@
+
+
+
+        <label>
+          Please enter the percentage of tip you would like to leave
+
+<input
+  type="integer"
+  name="percentageOfTip"
+  onChange={this.handleChange}
+/>
+      </label>
