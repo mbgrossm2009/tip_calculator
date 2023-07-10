@@ -10,7 +10,6 @@ function TipCalculator() {
   const [totalAmount, setTotalAmount] = useState("$");
   const [submitted, setSubmitted] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  const [reset, setReset] = useState("");
   const [error, setError] = useState("");
   const [customTip, setCustomTip] = useState("");
 
