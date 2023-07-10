@@ -17,7 +17,6 @@ function TipCalculator() {
     setTotalAmount("$");
     setSelectedOption("");
     setSubmitted(false);
-    setReset(true);
     setError("");
     setCustomTip("");
   };
