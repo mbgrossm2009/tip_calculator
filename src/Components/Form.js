@@ -6,11 +6,8 @@ import Form from "react-bootstrap/Form";
 import "./styles.css";
 
 function TipCalculator() {
-  const [totalAmount, setTotalAmount] = useState("");
-  const [percentageOfTip, setPercentageOfTip] = useState("");
+  const [totalAmount, setTotalAmount] = useState("$");
   const [submitted, setSubmitted] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [percentage, setPercentage] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [reset, setReset] = useState("");
 
@@ -19,10 +16,6 @@ function TipCalculator() {
     setSelectedOption("");
     setSubmitted(false);
     setReset(true);
-  };
-
-  const handleSelectChange = (e) => {
-    setSelectedOption(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -53,7 +46,7 @@ function TipCalculator() {
             <Form.Select
               aria-label="Default select example"
               value={selectedOption}
-              onChange={handleSelectChange}
+              onChange={(e) => setSelectedOption(e.target.value)}
             >
               <option>Select Tip Amount</option>
               <option value="15">15%</option>

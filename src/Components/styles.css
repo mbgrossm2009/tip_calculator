@@ -11,3 +11,7 @@ Form {
 .title {
   text-align: center;
 }
+
+Button {
+  margin-left: 40px;
+}
