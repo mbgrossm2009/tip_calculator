@@ -10,6 +10,7 @@ function TipCalculator() {
   const [totalAmount, setTotalAmount] = useState("$");
   const [submitted, setSubmitted] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
+  const [reset, setReset] = useState("");
   const [error, setError] = useState("");
   const [customTip, setCustomTip] = useState("");
 
@@ -17,6 +18,7 @@ function TipCalculator() {
     setTotalAmount("$");
     setSelectedOption("");
     setSubmitted(false);
+    setReset(true);
     setError("");
     setCustomTip("");
   };
@@ -26,9 +28,12 @@ function TipCalculator() {
 
     if (
       totalAmount === "$" ||
+      !selectedOption ||
       (selectedOption === "other" && customTip === "")
     ) {
       setError("Please fill out all fields.");
+    } else if (isNaN(parseFloat(totalAmount.replace("$", "")))) {
+      setError("Please enter a valid number");
     } else {
       setSubmitted(true);
       setError("");
